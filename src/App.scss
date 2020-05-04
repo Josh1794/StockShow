@@ -10,6 +10,8 @@ $background-color-light: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: $background-color-dark;
+  color: $text-color-dark;
   img {
     height: 50px;
     width: 50px;
