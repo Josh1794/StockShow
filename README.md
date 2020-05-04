@@ -1,6 +1,6 @@
 <h1 align="center">Stock Show</h1>
 
-### A Stock Portfolio Site created with React
+## A Stock Portfolio Site created with React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
