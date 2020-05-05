@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6be017bc-9bce-4c1a-9729-426b62934676/deploy-status)](https://app.netlify.com/sites/inspiring-minsky-7c4977/deploys)
+
 <h1 align="center">Stock Show</h1>
 
 ## A Stock Portfolio Site created with React
