@@ -1,4 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6be017bc-9bce-4c1a-9729-426b62934676/deploy-status)](https://app.netlify.com/sites/inspiring-minsky-7c4977/deploys)
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/6be017bc-9bce-4c1a-9729-426b62934676/deploy-status)](https://app.netlify.com/sites/inspiring-minsky-7c4977/deploys) -->
+
+![Heroku](http://heroku-badge.herokuapp.com/?app=stock-show&style=flat&svg=1&root=index.html)
 
 <h1 align="center">Stock Show</h1>
 
