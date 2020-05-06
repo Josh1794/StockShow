@@ -2,9 +2,18 @@
 
 <h1 align="center">Stock Show</h1>
 
-## A Stock Portfolio Site created with React
+<h2 align ="center">A Stock Portfolio Site created with React</h2>
 
-### Available Scripts
+## Planned Features
+
+- Sign Up for an Account
+- Create a Portfolio(s)
+- Buy and Sell Stocks
+- Research Stocks
+- Track performance
+- View Data Visualizations
+
+## Available Scripts
 
 In the project directory, you can run:
 
