@@ -2,7 +2,7 @@
 
 ![Heroku](http://heroku-badge.herokuapp.com/?app=stock-show&style=flat&svg=1&root=index.html)
 ![GitHub issues](https://img.shields.io/github/issues/Josh1794/StockShow)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://Josh1794.mit-license.org/)
 
 <h1 align="center">Stock Show</h1>
 
