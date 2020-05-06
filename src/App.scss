@@ -3,17 +3,42 @@ $text-color-dark: white;
 $background-color-dark: black;
 $background-color-light: white;
 
-.App {
-  height: 100vh;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: $background-color-dark;
-  color: $text-color-dark;
-  img {
-    height: 50px;
-    width: 50px;
+// .App {
+//   height: 100vh;
+//   display: flex;
+//   flex: 1;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: $background-color-dark;
+//   color: $text-color-dark;
+//   img {
+//     height: 50px;
+//     width: 50px;
+//   }
+// }
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  display: block;
+}
+nav {
+  a {
+    display: inline-block;
+    margin: 1em;
+  }
+}
+
+form {
+  div {
+    margin: 1em;
+    display: inline-block;
   }
 }

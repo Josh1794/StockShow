@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import { Navbar } from './components';
+import Routes from './routes';
 
 function App() {
   return (
     <div className='App'>
-      Stock Show Coming Soon
-      <img src={logo} className='App-logo' alt='logo' />
+      <Navbar />
+      <Routes />
     </div>
   );
 }
