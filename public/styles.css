@@ -1,18 +1,3 @@
-// .App {
-//   height: 100vh;
-//   display: flex;
-//   flex: 1;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: $background-color-dark;
-//   color: $text-color-dark;
-//   img {
-//     height: 50px;
-//     width: 50px;
-//   }
-// }
-
 a {
   text-decoration: none;
 }
@@ -20,16 +5,23 @@ a {
 label {
   display: block;
 }
+nav a {
+  display: inline-block;
+  margin: 1em;
+}
 nav {
-  a {
-    display: inline-block;
-    margin: 1em;
-  }
+  position: relative;
 }
 
-form {
-  div {
-    margin: 1em;
-    display: inline-block;
-  }
+form div {
+  margin: 1em;
+  display: inline-block;
+}
+
+.about {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
