@@ -1,5 +1,3 @@
-<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/6be017bc-9bce-4c1a-9729-426b62934676/deploy-status)](https://app.netlify.com/sites/inspiring-minsky-7c4977/deploys) -->
-
 ![Heroku](http://heroku-badge.herokuapp.com/?app=stock-show&style=flat&svg=1&root=index.html)
 ![GitHub issues](https://img.shields.io/github/issues/Josh1794/StockShow)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://Josh1794.mit-license.org/)
