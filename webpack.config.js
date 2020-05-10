@@ -1,6 +1,5 @@
 const isDev = process.env.NODE_ENV === 'development';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = {
   mode: isDev ? 'development' : 'production',
@@ -12,17 +11,15 @@ module.exports = {
     path: __dirname,
     filename: './public/bundle.js',
   },
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss'],
-  },
+
   devtool: 'source-map',
   watchOptions: {
     ignored: /node_modules/,
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
+      filename: isDev ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
     }),
   ],
   module: {
@@ -35,18 +32,18 @@ module.exports = {
       {
         test: /\.module\.s(a|c)ss$/,
         loader: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              sourceMap: isDevelopment,
+              sourceMap: isDev,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment,
+              sourceMap: isDev,
             },
           },
         ],
@@ -55,16 +52,19 @@ module.exports = {
         test: /\.s(a|c)ss$/,
         exclude: /\.module.(s(a|c)ss)$/,
         loader: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment,
+              sourceMap: isDev,
             },
           },
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss'],
   },
 };

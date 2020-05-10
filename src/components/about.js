@@ -5,15 +5,7 @@ import React from 'react';
  */
 export default function About() {
   return (
-    <div
-      className='about'
-      styles={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <div className='about'>
       <h3>About Stock Show</h3>
       <div>ADD ABOUT SECTION HERE</div>
     </div>
