@@ -1,13 +1,1 @@
-{
-  "version": 3,
-  "sources": [
-    "webpack:///./public/styles.scss"
-  ],
-  "names": [],
-  "mappings": "AAAA,EAAE,qBAAqB,MAAM,cAAc,MAAM,qBAAqB,WAAW,IAAI,kBAAkB,SAAS,WAAW,qBAAqB,OAAO,YAAY,aAAa,sBAAsB,mBAAmB",
-  "file": "main.b0ea13a0b82b61474a51.css",
-  "sourcesContent": [
-    "a{text-decoration:none}label{display:block}nav a{display:inline-block;margin:1em}nav{position:relative}form div{margin:1em;display:inline-block}.about{height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center}\n"
-  ],
-  "sourceRoot": ""
-}
+{"version":3,"sources":["webpack:///./public/styles.scss"],"names":[],"mappings":"AAAA,EAAE,qBAAqB,MAAM,cAAc,MAAM,qBAAqB,WAAW,IAAI,kBAAkB,SAAS,WAAW,qBAAqB,OAAO,YAAY,aAAa,sBAAsB,mBAAmB","file":"main.b0ea13a0b82b61474a51.css","sourcesContent":["a{text-decoration:none}label{display:block}nav a{display:inline-block;margin:1em}nav{position:relative}form div{margin:1em;display:inline-block}.about{height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center}\n"],"sourceRoot":""}
