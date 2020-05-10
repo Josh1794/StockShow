@@ -5,17 +5,21 @@ a {
 label {
   display: block;
 }
-nav a {
-  display: inline-block;
-  margin: 1em;
+nav {
+  a {
+    display: inline-block;
+    margin: 1em;
+  }
 }
 nav {
   position: relative;
 }
 
-form div {
-  margin: 1em;
-  display: inline-block;
+form {
+  div {
+    margin: 1em;
+    display: inline-block;
+  }
 }
 
 .about {
