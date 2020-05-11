@@ -1,3 +1,8 @@
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 a {
   text-decoration: none;
 }
@@ -15,10 +20,61 @@ form div {
   margin: 1em;
   display: inline-block;
 }
-.about {
+
+.mainPage {
   height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.authPage {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+
+.authPage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: gray;
+  border-radius: 0.25em;
+  color: white;
+  box-shadow: 3px 3px 5px gray;
+}
+
+.authPage input {
+  height: 20px;
+  margin-top: 5px;
+}
+.authPage button {
+  border-width: 1px;
+  background-color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 0.25em;
+  font-size: medium;
+}
+.authPage button:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.authPage a {
+  padding: 7px;
+  color: white;
+  border-radius: 0.25em;
+  background-color: rgb(175, 56, 56);
+  font-size: medium;
+}
+
+.authPage a:hover {
+  background-color: rgb(212, 31, 31);
 }
