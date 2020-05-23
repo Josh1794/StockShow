@@ -79,11 +79,51 @@ form div {
   background-color: rgb(212, 31, 31);
 }
 
+.portfolioSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
 .smallPortfolioSection {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   min-width: 50%;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
+  min-height: 50vh;
+  padding: 20px;
   border-radius: 0.25em;
+  background-color: rgb(120, 120, 120);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.smallPortfolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 0.1em;
+  background-color: white;
+  -webkit-transition: background 0.5s; /* For Safari 3.0 to 6.0 */
+  transition: background 0.5s; /* For modern browsers */
+}
+.smallPortfolio:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  color: white;
+  background-color: rgb(50, 50, 50);
+  mix-blend-mode: normal;
 }

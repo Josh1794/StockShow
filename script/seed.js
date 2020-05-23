@@ -15,6 +15,7 @@ async function seed() {
   const portfolios = await Promise.all([
     Portfolio.create({ portfolioName: 'Investments', userId: 1 }),
     Portfolio.create({ portfolioName: 'Investments', userId: 2 }),
+    Portfolio.create({ portfolioName: 'Investments 2', userId: 1 }),
   ]);
 
   const stocks = await Promise.all([
