@@ -57078,7 +57078,7 @@ AuthForm.propTypes = {
 /*!*********************************!*\
   !*** ./src/components/index.js ***!
   \*********************************/
-/*! exports provided: Navbar, UserHome, About, Portfolio, Login, Signup */
+/*! exports provided: Navbar, UserHome, About, Portfolio, SinglePortfolio, Login, Signup */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57095,16 +57095,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _portfolio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./portfolio */ "./src/components/portfolio.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Portfolio", function() { return _portfolio__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _auth_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth-form */ "./src/components/auth-form.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _auth_form__WEBPACK_IMPORTED_MODULE_4__["Login"]; });
+/* harmony import */ var _singlePortfolio__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./singlePortfolio */ "./src/components/singlePortfolio.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SinglePortfolio", function() { return _singlePortfolio__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Signup", function() { return _auth_form__WEBPACK_IMPORTED_MODULE_4__["Signup"]; });
+/* harmony import */ var _auth_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth-form */ "./src/components/auth-form.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _auth_form__WEBPACK_IMPORTED_MODULE_5__["Login"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Signup", function() { return _auth_form__WEBPACK_IMPORTED_MODULE_5__["Signup"]; });
 
 /**
  * `components/index.js` exists simply as a 'central export' for our components.
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
+
 
 
 
@@ -57256,6 +57260,50 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 /***/ }),
 
+/***/ "./src/components/singlePortfolio.js":
+/*!*******************************************!*\
+  !*** ./src/components/singlePortfolio.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store */ "./src/store/index.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(state => ({
+  user: state.user,
+  singlePortfolio: state.portfolio.singlePortfolio
+}), dispatch => ({
+  getSinglePortfolio: id => dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__["getSinglePortfolio"])(id))
+}))(class SinglePortfolio extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.props.getSinglePortfolio(this.props.match.params.id);
+  }
+
+  render() {
+    console.log(this.props);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "mainPage"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "singlePortfolio"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " ", this.props.singlePortfolio.portfolioName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "SINGLE PORTFOLIO VIEW")));
+  }
+
+}));
+
+/***/ }),
+
 /***/ "./src/components/smallPortfolio.js":
 /*!******************************************!*\
   !*** ./src/components/smallPortfolio.js ***!
@@ -57271,14 +57319,11 @@ __webpack_require__.r(__webpack_exports__);
 
 function SmallPortfolio(props) {
   if (props.userId === props.user.id) {
-    return (
-      /*#__PURE__*/
-      // <a href={`/portfolios/${props.id}`}>
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "smallPortfolio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, props.portfolioName)) // </a>
-
-    );
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: `/portfolio/${props.id}`
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "smallPortfolio"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, props.portfolioName)));
   } else return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
 }
 
@@ -57436,8 +57481,12 @@ class Routes extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       path: "/home",
       component: _components__WEBPACK_IMPORTED_MODULE_4__["UserHome"]
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      exact: true,
       path: "/portfolio",
       component: _components__WEBPACK_IMPORTED_MODULE_4__["Portfolio"]
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      path: "/portfolio/:id",
+      component: _components__WEBPACK_IMPORTED_MODULE_4__["SinglePortfolio"]
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
       component: _components__WEBPACK_IMPORTED_MODULE_4__["Login"]
     }));
@@ -57504,7 +57553,7 @@ socket.on('connect', () => {
 /*!****************************!*\
   !*** ./src/store/index.js ***!
   \****************************/
-/*! exports provided: default, me, auth, logout, getAllPortfolios, postPortfolio */
+/*! exports provided: default, me, auth, logout, getAllPortfolios, getSinglePortfolio, postPortfolio */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57524,6 +57573,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["logout"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getAllPortfolios", function() { return _portfolio__WEBPACK_IMPORTED_MODULE_5__["getAllPortfolios"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSinglePortfolio", function() { return _portfolio__WEBPACK_IMPORTED_MODULE_5__["getSinglePortfolio"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "postPortfolio", function() { return _portfolio__WEBPACK_IMPORTED_MODULE_5__["postPortfolio"]; });
 
@@ -57551,12 +57602,13 @@ const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer,
 /*!********************************!*\
   !*** ./src/store/portfolio.js ***!
   \********************************/
-/*! exports provided: getAllPortfolios, postPortfolio, default */
+/*! exports provided: getAllPortfolios, getSinglePortfolio, postPortfolio, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllPortfolios", function() { return getAllPortfolios; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSinglePortfolio", function() { return getSinglePortfolio; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postPortfolio", function() { return postPortfolio; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -57566,8 +57618,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 const GOT_ALL_PORTFOLIOS = 'GOT_ALL_PORTFOLIOS';
-const ADD_PORTFOLIO = 'ADD_PORTFOLIO'; // const DELETE_BOOK = "DELETE_BOOK";
-
+const GOT_SINGLE_PORTFOLIO = 'GOT_SINGLE_PORTFOLIO';
+const ADD_PORTFOLIO = 'ADD_PORTFOLIO';
 /**
  * ACTION CREATORS
  */
@@ -57577,11 +57629,15 @@ const gotAllPortfolios = portfolios => ({
   portfolios
 });
 
+const gotSinglePortfolio = portfolios => ({
+  type: GOT_SINGLE_PORTFOLIO,
+  portfolios
+});
+
 const addPortfolio = portfolios => ({
   type: ADD_PORTFOLIO,
   portfolios
-}); // const deletedBook = books => ({ type: DELETE_BOOK, books });
-
+});
 /**
  * THUNK CREATORS
  */
@@ -57595,6 +57651,16 @@ const getAllPortfolios = userId => async dispatch => {
     dispatch(gotAllPortfolios(data));
   } catch (err) {
     console.error(err);
+  }
+};
+const getSinglePortfolio = id => async dispatch => {
+  try {
+    const {
+      data
+    } = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`/api/portfolios/single/${id}`);
+    dispatch(gotSinglePortfolio(data));
+  } catch (err) {
+    console.log(err);
   }
 };
 const postPortfolio = (name, userId) => {
@@ -57612,22 +57678,14 @@ const postPortfolio = (name, userId) => {
       console.log(err);
     }
   };
-}; //DELETE ROUTE NEEDS WORK
-// export const deleteBook = () => async dispatch => {
-//   try {
-//     const { data } = await axios.delete(`/api/books`);
-//     dispatch(deletedBook(data));
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-
+};
 /**
  * INITIAL STATE
  */
 
 const initialState = {
-  portfolios: []
+  portfolios: [],
+  singlePortfolio: {}
 };
 /**
  * REDUCER
@@ -57638,6 +57696,12 @@ const initialState = {
     case GOT_ALL_PORTFOLIOS:
       return { ...state,
         portfolios: [...action.portfolios]
+      };
+
+    case GOT_SINGLE_PORTFOLIO:
+      return { ...state,
+        singlePortfolio: { ...action.portfolios
+        }
       };
 
     case ADD_PORTFOLIO:

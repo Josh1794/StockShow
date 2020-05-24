@@ -26,6 +26,16 @@ router.get('/:userId', async (req, res, next) => {
   }
 });
 
+router.get('/single/:id', async (req, res, next) => {
+  try {
+    const singlePortfolio = await Portfolio.findByPk(req.params.id);
+    if (singlePortfolio) res.send(singlePortfolio);
+    else res.status(404).send('404');
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post('/', async (req, res, next) => {
   try {
     const newPortfolio = await Portfolio.create({

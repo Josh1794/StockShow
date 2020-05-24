@@ -4,8 +4,8 @@ import axios from 'axios';
  * ACTION TYPES
  */
 const GOT_ALL_PORTFOLIOS = 'GOT_ALL_PORTFOLIOS';
+const GOT_SINGLE_PORTFOLIO = 'GOT_SINGLE_PORTFOLIO';
 const ADD_PORTFOLIO = 'ADD_PORTFOLIO';
-// const DELETE_BOOK = "DELETE_BOOK";
 
 /**
  * ACTION CREATORS
@@ -14,8 +14,11 @@ const gotAllPortfolios = (portfolios) => ({
   type: GOT_ALL_PORTFOLIOS,
   portfolios,
 });
+const gotSinglePortfolio = (portfolios) => ({
+  type: GOT_SINGLE_PORTFOLIO,
+  portfolios,
+});
 const addPortfolio = (portfolios) => ({ type: ADD_PORTFOLIO, portfolios });
-// const deletedBook = books => ({ type: DELETE_BOOK, books });
 
 /**
  * THUNK CREATORS
@@ -26,6 +29,15 @@ export const getAllPortfolios = (userId) => async (dispatch) => {
     dispatch(gotAllPortfolios(data));
   } catch (err) {
     console.error(err);
+  }
+};
+
+export const getSinglePortfolio = (id) => async (dispatch) => {
+  try {
+    const { data } = await axios.get(`/api/portfolios/single/${id}`);
+    dispatch(gotSinglePortfolio(data));
+  } catch (err) {
+    console.log(err);
   }
 };
 
@@ -44,20 +56,10 @@ export const postPortfolio = (name, userId) => {
   };
 };
 
-//DELETE ROUTE NEEDS WORK
-// export const deleteBook = () => async dispatch => {
-//   try {
-//     const { data } = await axios.delete(`/api/books`);
-//     dispatch(deletedBook(data));
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-
 /**
  * INITIAL STATE
  */
-const initialState = { portfolios: [] };
+const initialState = { portfolios: [], singlePortfolio: {} };
 
 /**
  * REDUCER
@@ -67,6 +69,8 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case GOT_ALL_PORTFOLIOS:
       return { ...state, portfolios: [...action.portfolios] };
+    case GOT_SINGLE_PORTFOLIO:
+      return { ...state, singlePortfolio: { ...action.portfolios } };
     case ADD_PORTFOLIO:
       return { ...state, portfolios: [...state.portfolios, action.portfolios] };
     default:
